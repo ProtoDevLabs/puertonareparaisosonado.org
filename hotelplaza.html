@@ -1,0 +1,416 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+            @layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+
+.navbar-logo {
+    width: 50px; /* Ancho fijo para el logo */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+}
+
+/* Si deseas ajustar el tamaño en dispositivos pequeños */
+@media (max-width: 768px) {
+    .navbar-logo {
+        width: 40px; /* Reduce el tamaño en pantallas pequeñas */
+    }
+}
+
+
+
+		</style>
+  </head>
+  <body class="bg-background text-foreground">
+    <body class="bg-background text-foreground">
+ <nav class="bg-green-200 text-center py-4">
+  
+  
+    <div class="flex items-center">
+        <img src="https://www.dropbox.com/scl/fi/id41rkaz3c80jaeq59w66/Logo_Karen_Art_board_1-removebg-preview.png?rlkey=74rvpwprikjpnxxxbz3opc49i&st=lu8r13rl&raw=1" 
+             alt="Logo" 
+             class="w-12 h-auto"> <!-- Ancho fijo de 50px -->
+        
+    </div>
+
+
+
+
+
+    <!-- Menú para pantallas grandes -->
+    <ul class="hidden md:flex justify-center space-x-8">
+      <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+      <li><a href="abaut.html" class="hover:text-green-600">About</a></li>
+      <li><a href="#" class="hover:text-green-600">Hotels</a></li>
+      <li><a href="#" class="hover:text-green-600">charcos</a></li>
+      <li><a href="#" class="hover:text-green-600">Restaurants</a></li>
+      <li><a href="#" class="hover:text-green-600">artesanias</a></li>
+      <li>
+        <div class="relative inline-block">
+          <button class="hover:text-green-600">Value</button>
+          <div class="absolute hidden bg-white text-black mt-2 rounded shadow-lg">
+            <a href="#" class="block px-4 py-2 hover:bg-zinc-200">Option 1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-zinc-200">Option 2</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Botón de menú para pantallas pequeñas -->
+    <button class="md:hidden text-xl" id="menu-button">
+      &#9776; <!-- Símbolo de menú (hamburguesa) -->
+    </button>
+  </div>
+
+  <!-- Menú desplegable para pantallas pequeñas -->
+  <ul class="md:hidden hidden" id="menu-list">
+    <li><a href="index.html" class="block py-2 text-center hover:text-green-600">Home</a></li>
+    <li><a href="abaut.html" class="block py-2 text-center hover:text-green-600">About</a></li>
+    <li><a href="#" class="block py-2 text-center hover:text-green-600">Hotels</a></li>
+    <li><a href="#" class="block py-2 text-center hover:text-green-600">charcos</a></li>
+    <li><a href="#" class="block py-2 text-center hover:text-green-600">Restaurantes</a></li>
+    <li><a href="#" class="block py-2 text-center hover:text-green-600">Artesanias</a></li>
+    <li>
+      <div class="relative inline-block">
+        <button class="block py-2 text-center hover:text-green-600">Value</button>
+        <div class="absolute hidden bg-white text-black mt-2 rounded shadow-lg">
+          <a href="#" class="block px-4 py-2 hover:bg-zinc-200">Option 1</a>
+          <a href="#" class="block px-4 py-2 hover:bg-zinc-200">Option 2</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+  
+   <div class="carousel relative overflow-hidden">
+    <!-- Contenedor de imágenes -->
+    <img src="https://www.dropbox.com/scl/fi/y44d5go9g3yf65s37gvkz/IMG-20241118-WA0046.jpg?rlkey=k9joiytjbra4tfiarvq9815jg&st=asvzu3g9&raw=1" alt="Modern Hotel" class="w-full rounded-lg carousel-image hidden" />
+    <img src="https://www.dropbox.com/scl/fi/afzoqdlnu29klnwznigwu/IMG-20241118-WA0043.jpg?rlkey=o6gukw9s8lgez5co9iwnun0vi&st=1in9h15r&raw=1" alt="Image 2" class="w-full rounded-lg carousel-image hidden" />
+    <img src="https://www.dropbox.com/scl/fi/fu0fvp2uzcsmaqf3gvl35/IMG-20241118-WA0069.jpg?rlkey=ld01smr7bridnjzzu6uvzdagp&st=pmmsb3f6&raw=1" alt="Image 3" class="w-full rounded-lg carousel-image hidden" />
+    <img src="https://www.dropbox.com/scl/fi/8m0cxc2fdtnssjnxeqr21/IMG-20241118-WA0036.jpg?rlkey=93jxeenqi1iuj5ybarmzso3rr&st=gum1ohi3&raw=1" alt="Image 4" class="w-full rounded-lg carousel-image hidden" />
+    
+
+    <!-- Botones de navegación -->
+    <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+      <button onclick="previousSlide()" class="bg-white rounded-full p-2">❮</button>
+    </div>
+    <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+      <button onclick="nextSlide()" class="bg-white rounded-full p-2">❯</button>
+    </div>
+  </div>
+    <div class="flex justify-center mt-2">
+      <span class="h-2 w-2 bg-white rounded-full mx-1"></span>
+      <span class="h-2 w-2 bg-white rounded-full mx-1"></span>
+      <span class="h-2 w-2 bg-white rounded-full mx-1"></span>
+    </div>
+  </div>
+
+  
+  <div class="flex mt-4">
+    <div class="bg-zinc-200 p-4 rounded-lg w-1/3">
+      <p class="font-bold">Address:</p>
+      <p>5CQ8+2P Puerto Nare, Antioquia</p>
+      <p class="font-bold">Contact:</p>
+   <a href="https://wa.me/573135199888?text=¡Hola!%20Venimos%20de%20Puerto%20Nare%20Turismo%20Soñado.%20¿Hay%20disponibilidad%20para%20reservar?" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   WhatsApp
+</a>
+
+      <div class="flex space-x-4 mt-2">
+        <img src="https://openui.fly.dev/openui/bicycle.svg?text=🚲" alt="Bicycle" class="h-6" />
+        <img src="https://openui.fly.dev/openui/car.svg?text=🚗" alt="Car" class="h-6" />
+      </div>
+    </div>
+    <div class="ml-4 w-2/3">
+      <h2 class="text-xl font-bold">Hotel Plaza</h2>
+      <p>Luxurious beachfront resort offering stunning views and top-notch amenities.</p>
+    </div>
+  </div>
+
+  
+  <div class="flex mt-4">
+    <div class="bg-white shadow-lg rounded-lg p-4 w-1/2 mr-4">
+      <div class="flex items-center">
+        <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+        <h3 class="ml-2 font-bold">Victoria Restrepo Vélez</h3>
+      </div>
+      <p>Es absolutamente increíble la capacidad que tienen al interior de las habitaciones para aislar el ruido exterior y poder obtener un reparador descanso. Las instalaciones son verdaderamente cómodas...</p>
+      <p class="text-zinc-500">Reviewer Name</p>
+    </div>
+    <div class="bg-white shadow-lg rounded-lg p-4 w-1/2">
+      <div class="flex items-center">
+        <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+        <h3 class="ml-2 font-bold">Dara Cano</h3>
+      </div>
+      <p>Muy limpio, buena atencion 10/10...</p>
+      <p class="text-zinc-500">Reviewer Name</p>
+    </div>
+  </div>
+
+  
+  <div class="mt-4">
+    <img src="https://www.dropbox.com/scl/fi/ornvbn09e7qzd95j5bu0s/hotelplaza.png?rlkey=bso8973z0qa3ka62ozm5khhhr&st=zxu3nxr1&raw=1" alt="" width="500" >
+  </div>
+
+  
+  <footer class="bg-green-200 p-4 mt-4 rounded-t-lg">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <img src="https://openui.fly.dev/openui/logo.svg?text=Logo" alt="Website Logo" class="h-10" />
+        <div class="flex space-x-4 ml-4">
+          <a href="#" class="text-primary" ><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+<path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+</svg></a>
+          <a href="#" class="text-primary"><svg width="20px" height="20px" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>twitter [#154]</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+
+</defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)" fill="#000000">
+            <g id="icons" transform="translate(56.000000, 160.000000)">
+                <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705" id="twitter-[#154]">
+
+</path>
+            </g>
+        </g>
+    </g>
+</svg></a>
+          <a href="#" class="text-primary"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H15V13.9999H17.0762C17.5066 13.9999 17.8887 13.7245 18.0249 13.3161L18.4679 11.9871C18.6298 11.5014 18.2683 10.9999 17.7564 10.9999H15V8.99992C15 8.49992 15.5 7.99992 16 7.99992H18C18.5523 7.99992 19 7.5522 19 6.99992V6.31393C19 5.99091 18.7937 5.7013 18.4813 5.61887C17.1705 5.27295 16 5.27295 16 5.27295C13.5 5.27295 12 6.99992 12 8.49992V10.9999H10C9.44772 10.9999 9 11.4476 9 11.9999V12.9999C9 13.5522 9.44771 13.9999 10 13.9999H12V21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" fill="#0F0F0F"/>
+</svg></a>
+        </div>
+      </div>
+      <div class="flex space-x-8">
+        <div>
+          <h4 class="font-bold">Explore</h4>
+          <ul>
+            <li><a href="#" class="text-primary">Design</a></li>
+            <li><a href="#" class="text-primary">Prototyping</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold">Resources</h4>
+          <ul>
+            <li><a href="#" class="text-primary">Blog</a></li>
+            <li><a href="#" class="text-primary">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>window.tailwind.config = {
+  darkMode: ["class"],
+  theme: {
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+    },
+  },
+};
+ let currentIndex = 0;
+ const images = document.querySelectorAll(".carousel-image");
+
+ function showSlide(index) {
+   images.forEach((img, i) => {
+     img.classList.toggle("hidden", i !== index);
+   });
+ }
+
+ function nextSlide() {
+   currentIndex = (currentIndex + 1) % images.length;
+   showSlide(currentIndex);
+ }
+
+ function previousSlide() {
+   currentIndex = (currentIndex - 1 + images.length) % images.length;
+   showSlide(currentIndex);
+ }
+
+ // Mostrar la primera imagen al cargar la página
+ showSlide(currentIndex);
+
+  const menuButton = document.getElementById("menu-button");
+  const menuList = document.getElementById("menu-list");
+
+  menuButton.addEventListener("click", () => {
+    menuList.classList.toggle("hidden");
+  });</script>
+</body>
+  </body>
+</html>

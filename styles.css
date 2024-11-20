@@ -43,3 +43,18 @@
 --ring: 240 4.9% 83.9%;
 				}
 			}
+
+.navbar-logo {
+    width: 50px; /* Ancho fijo para el logo */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+}
+
+/* Si deseas ajustar el tamaño en dispositivos pequeños */
+@media (max-width: 768px) {
+    .navbar-logo {
+        width: 40px; /* Reduce el tamaño en pantallas pequeñas */
+    }
+}
+
+

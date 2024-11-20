@@ -1,0 +1,26 @@
+section {
+    background-color: #f6f7e8; /* Color suave del fondo */
+    padding: 3rem 1rem; /* Espaciado */
+}
+
+section h2 {
+    font-size: 2.25rem; /* Tamaño grande */
+    font-weight: 700; /* Negrita */
+    color: #2d3748; /* Gris oscuro */
+    margin-bottom: 1.5rem;
+}
+
+section img {
+    border-radius: 0.75rem; /* Esquinas redondeadas */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+section .shadow-lg {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra adicional */
+}
+
+section .bg-white {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    padding: 2rem; /* Espaciado interno */
+}
