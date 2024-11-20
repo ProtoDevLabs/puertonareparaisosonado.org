@@ -122,16 +122,24 @@
       </ul>
     </nav>
     <div class="relative bg-pastel-200">
-      <div class="carousel">
-        <img src="https://uc28389ff8df7385739935465137.dl.dropboxusercontent.com/cd/0/inline/CesySbsIGZOqCTrtLrAhYp3B5Xs02s-12EyJaeGTrzEfqUQUoDto9MpR90kIaZOO0mqHoV7Huy9qzhEC4NfwdY1Y1aKc94JwpfxBtsceVZ8Y9zTokuTJhUFv7qIy4ydnO3uJzri_Vx3rLpAQh9ZuoJUo/file#" alt="Modern Hotel" class="w-full rounded-lg" />
-        <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
-          <button class="bg-white rounded-full p-2">❮</button>
-        </div>
-        <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
-          <button class="bg-white rounded-full p-2">❯</button>
-        </div>
-      </div>
+  <div class="carousel relative overflow-hidden">
+    <!-- Contenedor de imágenes -->
+    <img src="https://www.dropbox.com/scl/fi/iki23lyirpzumimh47nw3/Imagen-de-WhatsApp-2024-11-13-a-las-16.26.02_83d9e6cb.jpg?rlkey=jwb7bm73sk7knd1dqt0h1cyy2&st=2ll9ribz&raw=1" alt="Modern Hotel" class="w-full rounded-lg carousel-image hidden" />
+    <img src="https://www.dropbox.com/scl/fi/uqxx5jgpifj07end12sho/Imagen-de-WhatsApp-2024-11-13-a-las-16.14.59_5f075b7c.jpg?rlkey=w97hpy3v6wqz9sje0clu1mcqj&st=g7nju30t&raw=1" alt="Image 2" class="w-full rounded-lg carousel-image hidden" />
+    <img src="https://www.dropbox.com/scl/fi/u1gnj1ie41siov950eamb/Imagen-de-WhatsApp-2024-11-13-a-las-16.14.59_0700561c.jpg?rlkey=moiihpylh5c2ngmmwlzln1o5m&st=gisbp1ji&raw=1" alt="Image 3" class="w-full rounded-lg carousel-image hidden" />
+    <img src="https://uc28389ff8df7385739935465137.dl.dropboxusercontent.com/cd/0/inline/CesySbsIGZOqCTrtLrAhYp3B5Xs02s-12EyJaeGTrzEfqUQUoDto9MpR90kIaZOO0mqHoV7Huy9qzhEC4NfwdY1Y1aKc94JwpfxBtsceVZ8Y9zTokuTJhUFv7qIy4ydnO3uJzri_Vx3rLpAQh9ZuoJUo/file#" alt="Image 4" class="w-full rounded-lg carousel-image hidden" />
+
+    <!-- Botones de navegación -->
+    <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+      <button onclick="previousSlide()" class="bg-white rounded-full p-2">❮</button>
     </div>
+    <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+      <button onclick="nextSlide()" class="bg-white rounded-full p-2">❯</button>
+    </div>
+  </div>
+</div>
+
+
     <main class="p-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-lg shadow-lg p-4">
@@ -171,6 +179,15 @@
           </div>
         </div>
         <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="https://placehold.co/300x200" alt="Hotel Kimp" class="w-full rounded-t-lg" />
+          <h3 class="text-lg font-semibold">Hotel Kimp</h3>
+          <div class="flex justify-end space-x-2 mt-2">
+            <img src="https://openui.fly.dev/openui/bicycle.svg" alt="Bicycle" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/airplane.svg" alt="Airplane" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/car.svg" alt="Car" class="w-5 h-5" />
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-4">
           <img src="https://placehold.co/300x200" alt="Mandarin Oriental, Tokyo" class="w-full rounded-t-lg" />
           <h3 class="text-lg font-semibold">Mandarin Oriental, Tokyo</h3>
           <div class="flex justify-end space-x-2 mt-2">
@@ -178,6 +195,35 @@
             <img src="https://openui.fly.dev/openui/airplane.svg" alt="Airplane" class="w-5 h-5" />
             <img src="https://openui.fly.dev/openui/car.svg" alt="Car" class="w-5 h-5" />
           </div>
+          
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="https://placehold.co/300x200" alt="Hotel Kimp" class="w-full rounded-t-lg" />
+          <h3 class="text-lg font-semibold">Hotel Kimp</h3>
+          <div class="flex justify-end space-x-2 mt-2">
+            <img src="https://openui.fly.dev/openui/bicycle.svg" alt="Bicycle" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/airplane.svg" alt="Airplane" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/car.svg" alt="Car" class="w-5 h-5" />
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="https://placehold.co/300x200" alt="Hotel Kimp" class="w-full rounded-t-lg" />
+          <h3 class="text-lg font-semibold">Hotel Kimp</h3>
+          <div class="flex justify-end space-x-2 mt-2">
+            <img src="https://openui.fly.dev/openui/bicycle.svg" alt="Bicycle" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/airplane.svg" alt="Airplane" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/car.svg" alt="Car" class="w-5 h-5" />
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <img src="https://placehold.co/300x200" alt="Mandarin Oriental, Tokyo" class="w-full rounded-t-lg" />
+          <h3 class="text-lg font-semibold">Mandarin Oriental, Tokyo</h3>
+          <div class="flex justify-end space-x-2 mt-2">
+            <img src="https://openui.fly.dev/openui/bicycle.svg" alt="Bicycle" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/airplane.svg" alt="Airplane" class="w-5 h-5" />
+            <img src="https://openui.fly.dev/openui/car.svg" alt="Car" class="w-5 h-5" />
+          </div>
+          
         </div>
       </div>
     </main>
@@ -211,6 +257,29 @@
     </footer>
   </body>
 </html>
+<script>
+  let currentIndex = 0;
+  const images = document.querySelectorAll('.carousel-image');
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('hidden', i !== index);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
+  }
+
+  function previousSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(currentIndex);
+  }
+
+  // Mostrar la primera imagen al cargar la página
+  showSlide(currentIndex);
+</script>
 
 
   </body>
